@@ -50,16 +50,14 @@ import numpy as np
 from chroptiks.plotting_utils import hist2d
 
 x = np.linspace(-1,1, 100000)+np.random.normal(0,.1, size=100000)
-
-y = x**(-3)+np.random.normal(0, 50, size=100000)
+y = x**(3)+np.random.normal(0, 0.3, size=100000)
+z =  np.random.normal(size=100000)
 
 hist2d.plot(x,y,nx=200,ny=200)
 
-z =  np.random.normal(size=100000)
-
 hist2d.plot(x,y,nx=40, ny=40, ccode = z, ccodename='Z', xlabel='X', ylabel='Y')
 
-hist2d.plot(y,z,nx=200,ny=200,bin_y=True, size_y_bin=0.1, xlabel='Y', ylabel='Z', percentiles=False)
+hist2d.plot(x,y,nx=200,ny=200,bin_y=True, size_y_bin=0.1, xlabel='X', ylabel='Y', percentiles=False)
 
 from chroptiks.plotting_utils import hist1d
 
@@ -77,11 +75,11 @@ from chroptiks.plotting_utils import scat
 scat.plot(x,z)
 
 #scat with color-code
-scat.plot(x,y, color=z, vmin=-0.5, vmax=0.5)
-
+scat.plot(x,y, ccode=z, color=None, edgecolor=None, vmin=-0.5, vmax=0.5)
+#note if you use ccode to color the points, you must set color to None, and I would advise you to set edgecolor to None as well or else each will have outlines.
 
 #scat with y-binning
-scat.plot(x,z, bin_y=True, size_y_bin=0.1, percentiles=True, xlabel='X', ylabel='Z')
+scat.plot(x, y, bin_y=True, size_y_bin=0.1, percentiles=True, xlabel='X', ylabel='Z', aspect='auto')
 
 
 
