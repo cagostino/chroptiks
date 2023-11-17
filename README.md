@@ -8,7 +8,7 @@ chroptiks is a Python package that offers advanced plotting utilities, making it
 
 Python libraries: matplotlib, numpy, scipy
 
-Other: LaTeX. If you don't want to use LaTeX in the plotting, edit the `plotting_utils.py` file and either comment out the line : `plt.rc('text', usetex=True)`, or set the `usetex` keyword to be False before installing the package. 
+Other: LaTeX. If you don't want to use LaTeX in the plotting, edit the `plotting_utils.py` file and either comment out the line : `plt.rc('text', usetex=True)`, or set the `usetex` keyword to be `False` before installing the package. 
 
 
 ## Installation
