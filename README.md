@@ -26,19 +26,7 @@ Here's how you can use your_package_name in your projects:
 
 from chroptiks.plotting_utils import hist2d, hist1d, scatter, plot3d, plotbar
 
-# Example usage
-# hist2d, hist1d, scatter, plot3d, plotbar are now ready to be used as per their defined functionalities and plots are generated through each of their plot methods. For example:
 
-```python
-
-import numpy as np
-from chroptiks.plotting_utils import hist2d
-
-x = np.linspace(0,100, 10000)
-y = np.linspace(0,100, 10000)*(-3)+5
-
-hist2d.plot(x,y)
-```
 
 ## Features
 
@@ -51,3 +39,18 @@ hist2d.plot(x,y)
 ---3D Plots (plot3d): Intuitive tools for 3D data visualization.
 
 ---Bar Charts (plotbar): Quick and customizable bar chart creation.
+
+
+## Example usage
+hist2d, hist1d, scatter, plot3d, plotbar are now ready to be used as per their defined functionalities and plots are generated through each of their plot methods. For example:
+
+```python
+
+import numpy as np
+from chroptiks.plotting_utils import hist2d
+
+x = np.linspace(0,100, 10000)
+y = np.linspace(0,100, 10000)*(-3)+5
+
+hist2d.plot(x,y)
+```
