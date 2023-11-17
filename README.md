@@ -49,8 +49,40 @@ hist2d, hist1d, scatter, plot3d, plotbar are now ready to be used as per their d
 import numpy as np
 from chroptiks.plotting_utils import hist2d
 
-x = np.linspace(0,100, 10000)
-y = np.linspace(0,100, 10000)*(-3)+5
+x = np.linspace(-1,1, 100000)+np.random.normal(0,.1, size=100000)
 
-hist2d.plot(x,y)
+y = x**(-3)+np.random.normal(0, 50, size=100000)
+
+hist2d.plot(x,y,nx=200,ny=200)
+
+z =  np.random.normal(size=100000)
+
+hist2d.plot(x,y,nx=40, ny=40, ccode = z, ccodename='Z', xlabel='X', ylabel='Y')
+
+hist2d.plot(y,z,nx=200,ny=200,bin_y=True, size_y_bin=0.1, xlabel='Y', ylabel='Z', percentiles=False)
+
+from chroptiks.plotting_utils import hist1d
+
+hist1d.plot(z, range=(-2,2), bins=100, xlabel='Z', ylabel='Counts')
+
+hist1d.plot(z, range=(-2,2), bins=100, xlabel='Z', ylabel='Counts', normed=True)
+
+hist1d.plot(z, range=(-4,4), bins=100, xlabel='Z', ylabel='Cumulative Count', cumulative=True)
+
+
+
+from chroptiks.plotting_utils import scat
+
+#scat
+scat.plot(x,z)
+
+#scat with color-code
+scat.plot(x,y, color=z, vmin=-0.5, vmax=0.5)
+
+
+#scat with y-binning
+scat.plot(x,z, bin_y=True, size_y_bin=0.1, percentiles=True, xlabel='X', ylabel='Z')
+
+
+
 ```
