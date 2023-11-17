@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: chroptiks
+Version: 0.1
+Summary: A set of helper functions for quickly making matplotlib plots using latex fonts andwith a high number of built-in options.
+Home-page: https://github.com/cagostino/chroptiks
+Author: Chris Agostino
+Author-email: cjp.agostino@gmail.com
+License: MIT
+Keywords: matplotlib plotting utilities
