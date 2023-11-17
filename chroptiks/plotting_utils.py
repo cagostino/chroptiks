@@ -105,8 +105,8 @@ def scatter(x,y, plotdata=True,  fig=None, ax=None, makefigax=True,
             )
         if plotdata:
             if percentiles:
-                ax.plot(outs['xmid'], outs['perc16'], linecolor+'-.', linewidth=linewidth )
-                ax.plot(outs['xmid'], outs['perc84'], linecolor+'-.', linewidth=linewidth)
+                ax.plot(outs['xmid'], outs['bins16'], linecolor+'-.', linewidth=linewidth )
+                ax.plot(outs['xmid'], outs['bins84'], linecolor+'-.', linewidth=linewidth)
             ax.plot(outs['xmid'], outs['avg_y'], linewidth=linewidth, color=linecolor, label=binlabel)
             return outs
         else:
@@ -126,7 +126,7 @@ def error(x,y, plotdata=True,  fig=None, ax=None, makefigax=True,
             #for plt.plot
             linecolor='r',linewidth=3,
             #for set_aesthetics
-            xlabel='', ylabel='', aspect='equal',
+            xlabel='', ylabel='', aspect='auto',
             xlim = [], ylim = []):
     fig, ax = figure_check(fig=fig, ax=ax, makefigax=makefigax)  
     if plotdata:
@@ -150,8 +150,8 @@ def error(x,y, plotdata=True,  fig=None, ax=None, makefigax=True,
             size_y_bin=size_y_bin, counting_thresh=counting_thresh, percentiles = percentiles,)
         if plotdata:
             if percentiles:
-                ax.plot(outs['xmid'], outs['perc16'], linecolor+'-.', linewidth=linewidth )
-                ax.plot(outs['xmid'], outs['perc84'], linecolor+'-.', linewidth=linewidth)
+                ax.plot(outs['xmid'], outs['bins16'], linecolor+'-.', linewidth=linewidth )
+                ax.plot(outs['xmid'], outs['bins84'], linecolor+'-.', linewidth=linewidth)
             ax.plot(outs['xmid'], outs['avg_y'], linewidth=linewidth, color=linecolor, label=binlabel)
             return outs
         else:
@@ -208,7 +208,7 @@ def plot2dhist(x,y,
                ylabel='', 
                lim=False, 
                setplotlims=False, 
-               aspect='equal'):
+               aspect='auto'):
     if type(x)!=np.array:
         x = np.copy(np.array(x))
     if type(y)!=np.array:
@@ -255,7 +255,7 @@ def plot2dhist(x,y,
         if data:
 
             ax.imshow((hist.transpose())**dens_scale, cmap='gray_r',extent=extent,origin='lower',
-                        aspect='auto',alpha=0.9)                
+                        aspect=aspect,alpha=0.9)                
         if bin_y:
             if size_y_bin !=0:
                 nbins = int( (xlim[1]-xlim[0])/size_y_bin)
@@ -317,7 +317,7 @@ def plot2dhist(x,y,
         else:
             mn, mx = np.nanmin(ccode_avgs), np.nanmax(ccode_avgs)       
         im = ax.imshow((ccode_avgs.transpose()), cmap=cmap,extent=extent,origin='lower',
-                aspect='auto',alpha=0.9, vmin=mn, vmax=mx)#, norm=colors.PowerNorm(gamma=1/2)) 
+                aspect=aspect,alpha=0.9, vmin=mn, vmax=mx)#, norm=colors.PowerNorm(gamma=1/2)) 
         if show_cbar:
             cbar = fig.colorbar(im, ax=ax)
             cbar.set_label(ccodename, fontsize=20)
