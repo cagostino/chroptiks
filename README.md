@@ -42,8 +42,9 @@ hist2d.plot(x,y)
 
 ## Features
 
-2D Histograms (hist2d): Easily create 2D histograms for data analysis.
-1D Histograms (hist1d): Simplify the process of creating and customizing 1D histograms.
-Scatter Plots (scatter): Enhanced functionality for scatter plot creation.
-3D Plots (plot3d): Intuitive tools for 3D data visualization.
-Bar Charts (plotbar): Quick and customizable bar chart creation.
+---2D Histograms (hist2d): Easily create 2D histograms for data analysis.
+
+---1D Histograms (hist1d): Simplify the process of creating and customizing 1D histograms.
+---Scatter Plots (scatter): Enhanced functionality for scatter plot creation.
+---3D Plots (plot3d): Intuitive tools for 3D data visualization.
+---Bar Charts (plotbar): Quick and customizable bar chart creation.
