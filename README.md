@@ -3,6 +3,14 @@
 ## Description
 chroptiks is a Python package that offers advanced plotting utilities, making it easier to create complex and informative visualizations. It extends the functionality of libraries like matplotlib and scipy, providing a user-friendly interface for a variety of plotting needs.
 
+
+## Requirements
+
+Python libraries: matplotlib, numpy, scipy
+
+Other: LaTeX. If you don't want to use LaTeX in the plotting, edit the `plotting_utils.py` file and either comment out the line : `plt.rc('text', usetex=True)`, or set the `usetex` keyword to be False before installing the package. 
+
+
 ## Installation
 
 To install chroptiks, run:
@@ -39,9 +47,3 @@ hist2d.plot(x,y)
 Scatter Plots (scatter): Enhanced functionality for scatter plot creation.
 3D Plots (plot3d): Intuitive tools for 3D data visualization.
 Bar Charts (plotbar): Quick and customizable bar chart creation.
-
-## Requirements
-
-Python libraries: matplotlib, numpy, scipy
-
-Other: LaTeX. If you don't want to use LaTeX in the plotting, edit the plotting_utils file and comment out the line : `plt.rc('text', usetex=True)`
