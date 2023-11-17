@@ -42,8 +42,6 @@ Bar Charts (plotbar): Quick and customizable bar chart creation.
 
 ## Requirements
 
--matplotlib
--numpy
--scipy
+Python libraries: matplotlib, numpy, scipy
 
--latex
+Other: LaTeX. If you don't want to use LaTeX in the plotting, edit the plotting_utils file and comment out the line : `plt.rc('text', usetex=True)`
