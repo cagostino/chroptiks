@@ -67,6 +67,7 @@ def scatter(x,y, plotdata=True,  fig=None, ax=None, makefigax=True,
             facecolor=None, cmap='plasma', edgecolor='k', 
             alpha=1, color='k', marker='o', 
             s=5,   vmin=None, vmax=None, label='',
+            ccode=None,
             #for plot2dhist
             binlabel='',bin_y=False, 
             lim=True, setplotlims=True, bin_stat_y='mean',
@@ -84,6 +85,7 @@ def scatter(x,y, plotdata=True,  fig=None, ax=None, makefigax=True,
             edgecolor=edgecolor, 
             alpha=alpha,
             color=color, 
+            c = ccode,
             marker=marker, 
             s=s, 
             vmin=vmin, 
@@ -247,9 +249,10 @@ def plot2dhist(x,y,
             
     hist, xedges, yedges = np.histogram2d(x,y,bins = (int(nx),int(ny)), range=[xlim, ylim ])
     extent= [np.min(xedges),np.max(xedges),np.min(yedges),np.max(yedges)]
+    set_aesthetics(xlim=xlim, ylim=ylim, aspect=aspect, xlabel=xlabel, ylabel=ylabel, fig=fig, ax=ax, makefigax=False)
+
     if len(ccode)==0:        
         if data:
-            set_aesthetics(xlim=xlim, ylim=ylim, aspect=aspect, xlabel=xlabel, ylabel=ylabel, fig=fig, ax=ax, makefigax=False)
 
             ax.imshow((hist.transpose())**dens_scale, cmap='gray_r',extent=extent,origin='lower',
                         aspect='auto',alpha=0.9)                
