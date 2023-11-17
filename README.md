@@ -7,7 +7,9 @@ chroptiks is a Python package that offers advanced plotting utilities, making it
 
 To install chroptiks, simply run:
 
-pip install chroptiks
+git clone https://github.com/cagostino/chroptiks.git
+cd chroptiks
+python setup.py install
 
 ## Usage
 
